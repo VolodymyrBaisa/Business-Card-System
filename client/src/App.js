@@ -12,7 +12,7 @@ function App() {
     return (
         <Router>
             <Switch>
-                <Route export path="/" component={Dashboard} />
+                <Route exact path="/" component={Dashboard} />
                 <Route export path="/cardupload" component={CardUpload} />
                 <Route export path="/newcard" component={NewCard} />
                 <Route
