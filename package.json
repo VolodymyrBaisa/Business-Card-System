@@ -1,0 +1,8 @@
+{
+    "name": "dbc-system",
+    "version": "1.0.0",
+    "scripts": {
+        "postinstall": "npm install --prefix server",
+        "heroku-postbuild": "npm run build --prefix server"
+    }
+}
