@@ -4,9 +4,9 @@ import { Header } from '../components/Header'
 export const CreateAnAccount = () => {
     return (
         <>
-                    <Header />,
+                    <Header />
             <div className="credentials">
-                <img src="/img/user.htm" alt="user image"></img>
+                <img src="" alt="user image"></img>
                     <form className="forms">
                         <label for="firstname">First Name:</label>
                         <input type="text" name="firstname" />

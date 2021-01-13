@@ -1,7 +1,7 @@
 .upload{
     border-style: dashed;
-    padding: 20px;
-    margin-top: 10px;
+    padding: 2vw;
+    margin-top: 1vw;
 }
 .dropfile{
     text-align: center;
@@ -13,11 +13,11 @@ input[name=email],
 input[name=address],
 select {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 1.2vw 2vw;
+    margin: 0.8vw 0;
     display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 0.10vw solid #ccc;
+    border-radius: 0.4vw;
     box-sizing: border-box;
   }
 .cardtag{
@@ -28,20 +28,20 @@ input[name=cardtags],
 input[name=firstname],
 input[name=lastname]{
     width: 40%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 1.2vw 2vw;
+    margin: 0.8vw 0;
     display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 0.10vw solid #ccc;
+    border-radius: 0.4vw;
     box-sizing: border-box;
 }
   
   input[type=submit] {
     background-color:#EC524B;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+    padding: 1.4vw 1vw;
+    margin: 0.8vw 0;
     border: none;
-    border-radius: 4px;
+    border-radius: 0.4vw;
     cursor: pointer;
   }
