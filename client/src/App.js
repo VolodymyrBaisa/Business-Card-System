@@ -12,15 +12,15 @@ function App() {
     return (
         <Router>
             <Switch>
-                <Route exact path="/" component={Dashboard} />
-                <Route exact path="/cardupload" component={CardUpload} />
-                <Route exact path="/newcard" component={NewCard} />
+                <Route export path="/" component={Dashboard} />
+                <Route export path="/cardupload" component={CardUpload} />
+                <Route export path="/newcard" component={NewCard} />
                 <Route
-                    exact
+                    export
                     path="/accountandsecurity"
                     component={AccountAndSecurity}
                 />
-                <Route exact path="/security" component={Settings} />
+                <Route export path="/security" component={Settings} />
             </Switch>
         </Router>
     );
