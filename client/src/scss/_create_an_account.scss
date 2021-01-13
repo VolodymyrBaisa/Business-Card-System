@@ -1,24 +1,24 @@
-.credentials{
-    margin: auto;
-    width: 50%;
-    padding: 2.5vw;
+input[name=firstname],
+input[name=lastname],
+input[name=email],
+input[name=password],
+input[name=password],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
   }
-  
-img{
-    width: 50%;
-}
 
-.forms{
-    padding: 2.5vw;
-  }
-
-input{
-    padding: 0.25vw;
-}
-
-.save-button{
-    margin: 1vw;
+  input[type=submit] {
     background-color:#EC524B;
-    font-size: 1.5vw;
-    border-radius: 0.9vw;
-}
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }

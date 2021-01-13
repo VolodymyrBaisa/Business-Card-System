@@ -1,25 +1,23 @@
 import React from "react";
-import Header from './Header';
 
 export const CreateAnAccount = () => {
     return (
         <>
-            <Header />
             <div className="credentials">
                 <img src="/img/user.htm" alt="user image"></img>
-                    <div className="forms">
-                        <label for="first_name">First Name:</label>
-                        <input type="text" name="first_name" />
-                        <label for="last_name">Last Name:</label>
-                        <input type="text" name="last_name" /><br />
+                    <form className="forms">
+                        <label for="firstname">First Name:</label>
+                        <input type="text" name="firstname" />
+                        <label for="lastname">Last Name:</label>
+                        <input type="text" name="lastname" />
                         <label for="email">Email:</label>
-                        <input type="email" name="email" /><br />
+                        <input type="email" name="email" />
                         <label for="password">New Password:</label>
                         <input type="password" name="password" />
-                        <label for="confirm_password">Confirm Password:</label>
-                        <input type="password" name="confirm_password" /><br />
-                        <button className="save-button">Save Profile</button>
-                    </div>
+                        <label for="password">Confirm Password:</label>
+                        <input type="password" name="password" />
+                        <input type="submit" value="Save Profile" />
+                    </form>
             </div>
         </>
     )

@@ -1,10 +1,8 @@
 import React from "react";
-import  Header  from "./Header";
 
 export const CreateAnAccount = () => {
     return (
         <>
-            <Header />
             <div className="container">
                 <div className="upload"></div>
                 <form action="">
@@ -33,4 +31,4 @@ export const CreateAnAccount = () => {
             </div>
     </>
     )
-}
+};
