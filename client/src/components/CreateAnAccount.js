@@ -1,8 +1,10 @@
 import React from "react";
+import { Header } from '../components/Header'
 
 export const CreateAnAccount = () => {
     return (
         <>
+                    <Header />,
             <div className="credentials">
                 <img src="/img/user.htm" alt="user image"></img>
                     <form className="forms">

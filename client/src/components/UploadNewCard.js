@@ -1,8 +1,10 @@
 import React from "react";
+import { Header } from "../components/Header";
 
-export const CreateAnAccount = () => {
+export const UploadNewCard = () => {
     return (
         <>
+        <Header />
             <div className="container">
                 <div className="upload"></div>
                 <form action="">
