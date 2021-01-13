@@ -1,12 +1,24 @@
 .credentials{
     margin: auto;
     width: 50%;
-    padding: 10px;
+    padding: 2.5vw;
+  }
+  
+img{
+    width: 50%;
 }
 
+.forms{
+    padding: 2.5vw;
+  }
+
+input{
+    padding: 0.25vw;
+}
 
 .save-button{
+    margin: 1vw;
     background-color:#EC524B;
-    font-size: 1vw;
+    font-size: 1.5vw;
     border-radius: 0.9vw;
 }
