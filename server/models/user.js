@@ -13,16 +13,15 @@ const UserSchema = new mongoose.Schema({
     unique: true,
     default: "",
   },
-  email: {
+  password: {
     type: String,
     required: true,
     unique: true,
     default: "",
   },
-  password: {
+  confirmPassword: {
     type: String,
     required: true,
-    unique: true,
     default: "",
   },
   isDeleted: {
@@ -30,6 +29,11 @@ const UserSchema = new mongoose.Schema({
     required: true,
     unique: true,
     default: false,
+  },
+  img: {
+    data: Buffer,
+    contentType: "String",
+    default: "",
   },
 });
 

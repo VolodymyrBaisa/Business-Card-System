@@ -1,6 +1,5 @@
 const router = require("express").Router();
 
-const router = require("express").Router();
 const userController = require("../../controllers/userController");
 // Requiring passport
 const passport = require("../../utils/passport");
@@ -27,7 +26,5 @@ router
   .route("/authenticate")
   // Route for getting user data
   .post(userController.authenticate);
-
-module.exports = router;
 
 module.exports = router;

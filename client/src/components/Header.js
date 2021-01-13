@@ -1,6 +1,6 @@
 import React from "react";
 
-import TopGlassCover from "../img/svg/top-glass-cover";
+import TopGlassCover from "./img/svg/top-glass-cover";
 
 export const Header = () => {
   return (
