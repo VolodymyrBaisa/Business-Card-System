@@ -1,3 +1,11 @@
+.credentials img{
+  padding: 4vw;
+  display: block;
+  margin: auto;
+  width: 15vw;
+  border-radius: 50%;
+}
+
 input[name=firstname],
 input[name=lastname],
 input[name=email],
@@ -5,20 +13,20 @@ input[name=password],
 input[name=password],
 select {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 1.2vw 2vw;
+    margin: 0.8vw 0;
     display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 0.10vw solid #ccc;
+    border-radius: 0.4vw;
     box-sizing: border-box;
   }
 
   input[type=submit] {
     background-color:#EC524B;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+    padding: 1.4vw 2vw;
+    margin: 0.8vw 0;
     border: none;
-    border-radius: 4px;
+    border-radius: 0.4vw;
     cursor: pointer;
   }
