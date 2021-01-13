@@ -7,6 +7,10 @@ import CardUpload from "./pages/CardUpload";
 import NewCard from "./pages/NewCard";
 import AccountAndSecurity from "./pages/AccountAndSecurity";
 import Settings from "./pages/Settings";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import NoMatch from "./pages/NoMatch";
+
 
 function App() {
     return (
@@ -21,6 +25,9 @@ function App() {
                     component={AccountAndSecurity}
                 />
                 <Route exact path="/security" component={Settings} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/signup" component={Signup} />
+                <Route exact path="/nomatch" component={NoMatch} />
             </Switch>
         </Router>
     );
