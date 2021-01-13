@@ -6,7 +6,13 @@ export const UploadNewCard = () => {
         <>
         <Header />
             <div className="container">
-                <div className="upload"></div>
+                <div className="upload">
+                    <div className="dropfile">
+                    <h4>Drop file here</h4>
+                    <h4>or</h4>
+                    <input type="submit" value="Select File"></input>
+                    </div>
+                </div>
                 <form action="">
                     <div className="cardtag">
                         <label for="cardtag">Card Tag:</label>

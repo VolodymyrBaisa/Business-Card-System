@@ -1,3 +1,12 @@
+.upload{
+    border-style: dashed;
+    padding: 20px;
+    margin-top: 10px;
+}
+.dropfile{
+    text-align: center;
+}
+
 input[name=companyname],
 input[name=phonenumber],
 input[name=email],
@@ -26,21 +35,6 @@ input[name=lastname]{
     border-radius: 4px;
     box-sizing: border-box;
 }
-
-
-  /* input[name=cardtag],
-  input[name=cardtags],
-  input[name=firstname],
-  input[name=lastname],
-   select {
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  } */
   
   input[type=submit] {
     background-color:#EC524B;
