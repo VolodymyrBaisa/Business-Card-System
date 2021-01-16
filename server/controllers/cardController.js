@@ -1,4 +1,4 @@
-const db = require("../models");
+const db = require("../models/card");
 
 // Defining methods for the cardsController
 module.exports = {

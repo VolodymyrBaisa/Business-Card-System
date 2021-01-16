@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const router = require("express").Router();
-const cardController = require("../../controllers/cardController");
+const cardController = require("../../../controllers/cardController");
 
 // Matches with "/api/cards"
 router.route("/").get(cardController.findAll).post(cardController.upload);

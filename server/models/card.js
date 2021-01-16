@@ -13,6 +13,7 @@ const cardSchema = new mongoose.Schema({
   img: {
     data: Buffer,
     contentType: "String",
+    default: "",
   },
 });
 
