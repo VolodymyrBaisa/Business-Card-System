@@ -1,5 +1,11 @@
 import React from "react";
 
-export const UserNotification = () => {
-    return <div></div>;
+import Bell from "../img/svg/bell.svg";
+
+export const UserNotification = ({ isUserLoggedIn }) => {
+    return (
+        <div className="user-notification-container">
+            <img src={Bell} alt="User notification" />
+        </div>
+    );
 };

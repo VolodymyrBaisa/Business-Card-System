@@ -1,0 +1,31 @@
+.login-panel {
+    @include flex(flex-end, center, row);
+    width: 38.5%;
+
+    .user-icon-container {
+        width: 3vw;
+        height: 3vw;
+        border-radius: 50px;
+        margin-left: 1vw;
+        background: #fff;
+    }
+    .user {
+        position: relative;
+        cursor: pointer;
+        .user-container {
+            width: 2.8vw;
+            height: 2.8vw;
+            border-radius: 50px;
+            margin-left: 1vw;
+            background: #424f62;
+            border: 0.2vw solid #ec524b;
+        }
+        .userSVG {
+            position: absolute;
+            top: 50%;
+            left: 62.5%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+    }
+}

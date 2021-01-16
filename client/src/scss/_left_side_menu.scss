@@ -1,0 +1,20 @@
+.left-menu-container {
+    position: relative;
+    height: calc(100vh - 4vw - 0.3vw);
+    width: 18vw;
+    .left-menu-glass-cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        img {
+            width: 18vw;
+            height: calc(100vh - 4vw - 0.5vw);
+        }
+    }
+    .left-menu {
+        height: 100%;
+        background: #424f62;
+        padding-top: 5vw;
+    }
+}

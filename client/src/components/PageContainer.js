@@ -1,5 +1,5 @@
 import React from "react";
 
-export const PageContainer = () => {
-    return <div></div>;
+export const PageContainer = ({ children }) => {
+    return <div className="page-container">{children}</div>;
 };

@@ -1,0 +1,18 @@
+.float-share-sub-button-container {
+    border-radius: 50px;
+    background: #ec524b;
+    width: 3vw;
+    height: 3vw;
+    cursor: pointer;
+    margin-bottom: 0.5vw;
+    @include flex(center, center, column);
+    transition: all 0.2s ease-in-out;
+    img {
+        width: 2.2vw;
+        pointer-events: none;
+    }
+}
+
+.hide {
+    display: none;
+}

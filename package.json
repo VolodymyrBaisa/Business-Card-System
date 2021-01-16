@@ -4,9 +4,5 @@
     "scripts": {
         "postinstall": "npm install --prefix server",
         "heroku-postbuild": "npm run build --prefix server"
-    },
-    "dependencies": {
-        "bcrypt": "^5.0.0",
-        "cors": "^2.8.5"
     }
 }

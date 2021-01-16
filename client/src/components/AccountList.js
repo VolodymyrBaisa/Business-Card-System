@@ -1,5 +1,5 @@
 import React from "react";
 
-export const AccountList = () => {
-    return <div></div>;
+export const AccountList = ({ userName }) => {
+    return <div className="account-container">Hi, {userName}</div>;
 };

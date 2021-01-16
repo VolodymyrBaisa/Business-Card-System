@@ -1,0 +1,21 @@
+.float-share-button-container {
+    position: absolute;
+    bottom: 1vw;
+    right: 1vw;
+    border-radius: 50px;
+    background: #ec524b;
+    width: 3.7vw;
+    height: 3.7vw;
+    cursor: pointer;
+    @include flex(center, center, column);
+    img {
+        width: 3vw;
+        transform: translateX(-0.2vw);
+        pointer-events: none;
+    }
+}
+.float-share-children-container {
+    position: absolute;
+    bottom: 4.6vw;
+    right: 1.3vw;
+}
