@@ -7,20 +7,27 @@ import CardUpload from "./pages/CardUpload";
 import NewCard from "./pages/NewCard";
 import AccountAndSecurity from "./pages/AccountAndSecurity";
 import Settings from "./pages/Settings";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import NoMatch from "./pages/NoMatch";
+
 
 function App() {
     return (
         <Router>
             <Switch>
-                <Route export path="/" component={Dashboard} />
-                <Route export path="/cardupload" component={CardUpload} />
-                <Route export path="/newcard" component={NewCard} />
+                <Route exact path="/" component={Dashboard} />
+                <Route exact path="/cardupload" component={CardUpload} />
+                <Route exact path="/newcard" component={NewCard} />
                 <Route
-                    export
+                    exact
                     path="/accountandsecurity"
                     component={AccountAndSecurity}
                 />
-                <Route export path="/security" component={Settings} />
+                <Route exact path="/security" component={Settings} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/signup" component={Signup} />
+                <Route exact path="/nomatch" component={NoMatch} />
             </Switch>
         </Router>
     );
