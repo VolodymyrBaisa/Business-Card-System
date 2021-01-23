@@ -15,8 +15,7 @@ export default class Dashboard extends Component {
             isCardOpen: false,
             bigImgUrl: "",
         };
-        this.PUBLIC_URL =
-            process.env.REACT_APP_PUBLIC_URL || `http://localhost:3001`;
+        this.PUBLIC_URL = process.env.PUBLIC_URL || `http://localhost:3001`;
     }
 
     sortCards(cards) {
