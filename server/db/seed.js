@@ -205,7 +205,7 @@ const cardsSeed = [
         email: "simon@simondesigns.com",
         address: "425 Hidden Valley Road, NY 87903",
         date: new Date(),
-        img: "1/uploads/cards/8.jpg",
+        img: "/uploads/cards/18.jpg",
     },
     {
         cardTags: "Reporter",
