@@ -14,6 +14,7 @@ export default class Dashboard extends Component {
             cards: {},
             isCardOpen: false,
             bigImgUrl: "",
+            bigImgTitle: "",
         };
         this.PUBLIC_URL =
             process.env.REACT_APP_API_URL ||
@@ -87,6 +88,9 @@ export default class Dashboard extends Component {
                                                     this.setState({
                                                         isCardOpen: true,
                                                     });
+                                                    this.setState({
+                                                        bigImgTitle: s.cardTags,
+                                                    });
                                                 }}
                                             />
                                         );
@@ -98,9 +102,9 @@ export default class Dashboard extends Component {
                 ) : (
                     <></>
                 )}
-
                 {this.state.isCardOpen ? (
                     <OpenCard
+                        text={this.state.bigImgTitle}
                         setCard={this.state.bigImgUrl}
                         setIsCardOpen={(isCardOpen) =>
                             this.setState({ isCardOpen })
