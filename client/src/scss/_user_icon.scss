@@ -1,0 +1,10 @@
+.user-icon-container {
+    @include flex(center, center, column);
+    margin: 1vw 0;
+    .user-icon {
+        width: 6vw;
+        height: 6vw;
+        border-radius: 50vw;
+        border: 0.12vw solid #424f62;
+    }
+}

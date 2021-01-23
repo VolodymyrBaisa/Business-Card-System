@@ -1,4 +1,5 @@
-const db = require("../models/user");
+const db = require("../models");
+const hash = require("../utils/hash");
 
 // Defining methods for the userController
 module.exports = {
@@ -6,18 +7,17 @@ module.exports = {
         // Sending back a password, even a hashed password, isn't a good idea
         res.json({
             _id: req.user._id,
-            username: req.user.username,
+            firstName: req.user.first_name,
+            lastName: req.user.last_name,
             email: req.user.email,
-            comments: req.user.comments,
+            cards: req.user.cards,
         });
     },
 
-    // Route (controller) for signing up a user. The user's password is automatically hashed and stored securely thanks to
-    // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
-    // otherwise send back an error
     signup: function (req, res) {
         db.User.create({
-            username: req.body.username,
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
             email: req.body.email,
             password: req.body.password,
         })
@@ -29,7 +29,6 @@ module.exports = {
             });
     },
 
-    // to be implemented in the front end
     logout: function (req, res) {
         req.logout();
         res.redirect("/");
@@ -41,11 +40,52 @@ module.exports = {
             ? res.status(401).end("user isn't logged in")
             : // Otherwise send back the user's email and id
               // Sending back a password, even a hashed password, isn't a good idea
-              res.json({
-                  _id: req.user._id,
-                  username: req.user.username,
-                  email: req.user.email,
-                  comments: req.user.comments,
+              db.User.findOne({ _id: req.user._id }).then((result) => {
+                  res.json({
+                      _id: req.user._id,
+                      firstName: result.first_name,
+                      lastName: result.last_name,
+                      email: result.email,
+                      cards: result.cards,
+                  });
               });
+    },
+
+    remove: function (req, res) {
+        if (!req.user) {
+            res.status(401).end("user isn't logged in");
+        } else {
+            db.User.remove({ id: req.body._id })
+                .then(() => {
+                    req.logout();
+                    res.redirect("/");
+                })
+                .catch(console.log);
+        }
+    },
+
+    update: async function (req, res) {
+        db.User.updateOne(
+            { _id: req.body._id },
+            {
+                $set: {
+                    first_name: req.body.firstName,
+                    last_name: req.body.lastName,
+                    email: req.body.email,
+                    password: await hash.getHash(req.body.password, 14),
+                },
+            }
+        )
+            .then(() => {
+                db.User.findOne({ _id: req.body._id }).then((result) => {
+                    res.json({
+                        firstName: result.first_name,
+                        lastName: result.last_name,
+                        email: result.email,
+                        cards: result.cards,
+                    });
+                });
+            })
+            .catch(console.log);
     },
 };

@@ -1,0 +1,13 @@
+.user-placeholder {
+    position: relative;
+    width: 2.8vw;
+    height: 2.8vw;
+    border-radius: 50px;
+    background: #424f62;
+    border: 0.2vw solid #ec524b;
+    @include flex(center, center, row);
+    .user-placeholder-svg {
+        position: absolute;
+        width: 2vw;
+    }
+}

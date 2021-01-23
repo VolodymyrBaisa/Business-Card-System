@@ -1,5 +1,5 @@
 .search-container {
-    border-radius: 15px;
+    border-radius: 0.5vw;
     background: #fff;
     height: 1.9vw;
     width: 40vw;
@@ -15,10 +15,15 @@
         font-weight: bold;
         color: #fff;
         cursor: pointer;
+        transition: all 0.2s ease-out;
         img {
             margin-left: 0.2vw;
             pointer-events: none;
             height: 1vw;
+        }
+
+        &:hover {
+            background: rgba(236, 82, 75, 0.9);
         }
     }
     .search-button {

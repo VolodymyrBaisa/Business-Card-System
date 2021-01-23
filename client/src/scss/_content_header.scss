@@ -1,0 +1,48 @@
+.d-label-container {
+    @include flex(flex-start, center, center);
+
+    .d-header-label-container {
+        @include flex(flex-start, center, row);
+        transform: translateY(2.25vw);
+        position: relative;
+        z-index: 50;
+        .d-header-label {
+            @include flex(center, center, column);
+            background: #ec524b;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #fff;
+            height: 2.1vw;
+            padding: 0 1vw 0 1.5vw;
+        }
+        .d-label-end {
+            height: 2.23vw;
+            z-index: 10;
+            transform: translateX(-0.045vw);
+        }
+    }
+
+    @for $i from 10 through 2 {
+        .d-header-label-container:nth-child(10n + #{$i}) {
+            transform: translate(-(-0.85vw + $i), 2.25vw);
+            z-index: 10-$i;
+        }
+    }
+}
+
+.d-line-container {
+    @include flex(center, center, row);
+    z-index: 1;
+    width: 78vw;
+    .d-line-empty {
+        background: #424f62;
+        width: 100%;
+        height: 2.1vw;
+        z-index: 1;
+    }
+    .d-line-end {
+        width: 1vw;
+        height: 2.3vw;
+        transform: translate(-1vw, 0.15vw);
+    }
+}

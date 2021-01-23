@@ -1,0 +1,36 @@
+.account-list-container {
+    position: absolute;
+    top: 3.6vw;
+    right: 1.5vw;
+    min-width: 10vw;
+    min-height: 2vw;
+    background: #fff;
+    z-index: 2000;
+
+    .menu {
+        @include flex(flex-start, center, row);
+        cursor: pointer;
+        margin-bottom: 0.2vw;
+        padding-left: 0.5vw;
+        font-size: 1.1rem;
+        text-decoration: none;
+        color: #312f2f;
+
+        .text {
+            margin-left: 0.2vw;
+        }
+
+        &:hover {
+            background: #474747;
+            color: #fff;
+        }
+    }
+
+    .menu:first-child {
+        margin-top: 0.5vw;
+    }
+
+    .menu:last-child {
+        margin-bottom: 0.5vw;
+    }
+}

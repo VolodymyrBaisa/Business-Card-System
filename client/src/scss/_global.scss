@@ -21,6 +21,26 @@ body {
         rgba(243, 246, 255, 0.56875) 99.99%,
         rgba(240, 244, 247, 0) 100%
     );
+
+    .hide {
+        display: none;
+    }
+
+    @supports (backdrop-filter: none) {
+        .blur-enable {
+            backdrop-filter: blur(0.8vw);
+        }
+    }
+
+    @supports not (backdrop-filter: none) {
+        .blur-enable {
+            background: rgba(66, 79, 98, 0.95);
+        }
+    }
+
+    .shadow {
+        box-shadow: 0.2vw 0.2vw 0.5vw rgba(66, 79, 98, 0.7);
+    }
 }
 
 #root {

@@ -1,10 +1,12 @@
 import React, { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import EndIconContainer from "../img/svg/end-icon-container.svg";
 
-export const MenuSubItem = ({ icon, text, route }) => {
+export const MenuSubItem = ({ icon, text, isMenuActivated, route }) => {
     const textItem = useRef();
     const iconContainer = useRef();
+
     let tCurrent = "";
     let tWidth = "";
 
@@ -33,20 +35,14 @@ export const MenuSubItem = ({ icon, text, route }) => {
         }
     };
 
-    const onClickEvent = (e) => {
-        if (route) {
-            window.location = route;
-        }
-    };
-
     return (
-        <div className="sub-menu-container">
+        <div className={`sub-menu-container ${isMenuActivated ? "" : "hide"}`}>
             <div className="sub-menu-indicator"></div>
-            <div
+            <Link
                 className="sub-menu-item-container"
                 onMouseEnter={onMouseEnterEvent}
                 onMouseLeave={onMouseLeaveEvent}
-                onClick={onClickEvent}
+                to={route}
             >
                 <div className="sub-icon-container" ref={iconContainer}>
                     <img
@@ -59,7 +55,7 @@ export const MenuSubItem = ({ icon, text, route }) => {
                 <div className="sub-text" ref={textItem}>
                     {text}
                 </div>
-            </div>
+            </Link>
         </div>
     );
 };

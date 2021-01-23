@@ -1,0 +1,27 @@
+.close-button-container {
+    display: inline-block;
+    position: relative;
+    background: #ec524b;
+    padding: 0.3vw 0.4vw;
+    border-radius: 0.2vw;
+    cursor: pointer;
+
+    .close {
+        transition: all 0.2s ease-in-out;
+        width: 1vw;
+        height: 1vw;
+        &:hover {
+            transform: rotate(0.5turn);
+        }
+    }
+
+    .glass-cover {
+        position: absolute;
+        height: 50%;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        pointer-events: none;
+    }
+}

@@ -1,18 +1,36 @@
 import React, { Component } from "react";
-
-import { PageHeader } from "../../components/PageHeader";
+//Api
+import userAPI from "../../utils/userAPI.js";
+import { ContentHeader } from "../../components/ContentHeader";
 import { PageContainer } from "../../components/PageContainer";
+import { Button } from "../../components/Button";
+import { Label } from "../../components/Label";
 
 export default class Settings extends Component {
+    removeUserAccount = () => {
+        userAPI
+            .remove({
+                id: `ObjectId(${this.props._id})`,
+            })
+            .then(() => {
+                this.props.onUserCallback({});
+            })
+            .catch(console.log);
+    };
+
     render() {
         return (
             <>
-                <div className="d-header-container">
-                    <PageHeader labelName={["Settings"]} />
-                    <PageContainer>
-                        <div>Settings</div>
-                    </PageContainer>
-                </div>
+                <ContentHeader labelName={["Settings"]} />
+                <PageContainer>
+                    <div className="settings-page">
+                        <Label text={"Delete Account"} isImpotent={true} />
+                        <Button
+                            text={"Delete"}
+                            onClickEvent={this.removeUserAccount}
+                        />
+                    </div>
+                </PageContainer>
             </>
         );
     }

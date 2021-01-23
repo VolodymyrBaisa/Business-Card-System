@@ -1,0 +1,39 @@
+.filter-container {
+    position: absolute;
+    top: 2.9vw;
+    left: 20vw;
+    background: #fff;
+    min-width: 10vw;
+    min-height: 2vw;
+    z-index: 2000;
+
+    .menu,
+    .sub-menu {
+        font-size: 1.1rem;
+        color: #312f2f;
+        cursor: pointer;
+        padding-top: 0.1vw;
+        padding-bottom: 0.1vw;
+        &:hover {
+            background: #474747;
+            color: #fff;
+        }
+    }
+
+    .menu:first-child {
+        margin-top: 0.5vw;
+    }
+
+    .menu:last-child {
+        margin-bottom: 0.5vw;
+    }
+
+    .menu {
+        padding-left: 0.5vw;
+        padding-right: 0.5vw;
+    }
+
+    .sub-menu {
+        padding: 0.2vw 0 0.2vw 1vw;
+    }
+}

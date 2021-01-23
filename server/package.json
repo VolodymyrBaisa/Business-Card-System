@@ -1,34 +1,42 @@
 {
-  "name": "dbc-system",
-  "version": "1.0.0",
-  "description": "Digital Business Card System",
-  "main": "server.js",
-  "dependencies": {
-    "axios": "^0.21.1",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "if-env": "^1.0.4",
-    "mongoose": "^5.11.11"
-  },
-  "devDependencies": {
-    "concurrently": "^5.3.0"
-  },
-  "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd ../client && npm run start",
-    "install": "cd ../client && npm install",
-    "build": "cd ../client && npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "Digital",
-    "Business",
-    "Card",
-    "System"
-  ],
-  "author": "",
-  "license": "ISC"
+    "name": "dbc-system",
+    "version": "1.0.0",
+    "description": "Digital Business Card System",
+    "main": "server.js",
+    "dependencies": {
+        "axios": "^0.21.1",
+        "bcrypt": "^5.0.0",
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-session": "^1.17.1",
+        "if-env": "^1.0.4",
+        "mongoose": "^5.11.11",
+        "morgan": "^1.10.0",
+        "multer": "^1.4.2",
+        "passport": "^0.4.1",
+        "passport-local": "^1.0.0",
+        "react-router-dom": "^4.3.1"
+    },
+    "devDependencies": {
+        "concurrently": "^5.3.0"
+    },
+    "scripts": {
+        "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+        "start:prod": "node server.js",
+        "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+        "client": "cd ../client && npm run start",
+        "install": "cd ../client && npm install",
+        "build": "cd ../client && npm run build",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "seed": "node db/seed.js"
+    },
+    "keywords": [
+        "Digital",
+        "Business",
+        "Card",
+        "System"
+    ],
+    "author": "",
+    "license": "ISC"
 }

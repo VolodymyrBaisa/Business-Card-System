@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./scss/styles.scss";
 
@@ -8,29 +8,54 @@ import CardUpload from "./pages/fragments/CardUpload";
 import AccountAndSecurity from "./pages/fragments/AccountAndSecurity";
 import Settings from "./pages/fragments/Settings";
 import NoMatch from "./pages/NoMatch";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function App() {
+    const [user, setUser] = useState({});
+
     return (
         <Router>
-            <Switch>
-                <Container>
-                    <Route export exact path="/" component={Dashboard} />
+            <Container
+                key={window.location.pathname}
+                onUserCallback={(user) => setUser(user)}
+                onSearchCallback={(search) => {
+                    console.log(search);
+                }}
+                {...user}
+            >
+                <Switch>
                     <Route
-                        export
                         exact
-                        path="/cardupload"
-                        component={CardUpload}
+                        path="/"
+                        component={(props) => (
+                            <Dashboard {...props} user={user} />
+                        )}
                     />
-                    <Route
-                        export
-                        exact
-                        path="/accountandsecurity"
-                        component={AccountAndSecurity}
-                    />
-                    <Route export exact path="/security" component={Settings} />
-                    <Route export path="/nomatch" component={NoMatch} />
-                </Container>
-            </Switch>
+                    <ProtectedRoute exact path="/accountandsecurity">
+                        <AccountAndSecurity
+                            onUserCallback={(u) => {
+                                setUser({
+                                    ...user,
+                                    firstName: u.firstName,
+                                    lastName: u.lastName,
+                                    email: u.email,
+                                });
+                            }}
+                            {...user}
+                        />
+                    </ProtectedRoute>
+                    <ProtectedRoute exact path="/cardupload">
+                        <CardUpload {...user} />
+                    </ProtectedRoute>
+                    <ProtectedRoute exact path="/security">
+                        <Settings
+                            onUserCallback={(user) => setUser(user)}
+                            {...user}
+                        />
+                    </ProtectedRoute>
+                    <Route exact component={NoMatch} />
+                </Switch>
+            </Container>
         </Router>
     );
 }

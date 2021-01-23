@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+//Api
+import userAPI from "../utils/userAPI.js";
 //import components
 import { Section } from "../components/Section";
 import { Header } from "../components/Header";
@@ -13,6 +14,7 @@ import { MenuItem } from "../components/MenuItem";
 import { MenuSubItem } from "../components/MenuSubItem";
 import { ContentPanel } from "../components/ContentPanel";
 import { Row } from "../components/Row";
+
 //import SVG
 import FacebookMessenger from "../img/svg/facebook-messenger.svg";
 import Skype from "../img/svg/skype.svg";
@@ -27,49 +29,106 @@ import Upload from "../img/svg/upload-cloud.svg";
 export default class Container extends Component {
     constructor(props) {
         super(props);
-        this.children = props.children;
+        this.state = {
+            isMenuActivated: false,
+            user: {},
+        };
     }
+
+    authenticateUser() {
+        userAPI
+            .authenticateUser()
+            .then((res) => {
+                if (res.status === 200) {
+                    this.setState({ user: res.data });
+                    this.props.onUserCallback(res.data);
+                }
+            })
+            .catch(console.log);
+    }
+
+    componentDidMount() {
+        this.authenticateUser();
+    }
+
     render() {
         return (
-            <Section>
-                <Header>
-                    <Logo />
-                    <Search />
-                    <LoginPanel isUserLoggedIn={false} />
-                </Header>
-                <Row>
-                    <LeftSideMenu>
-                        <MenuItem icon={Home} text={"Dashboard"} route={"/"} />
-                        <MenuItem
-                            icon={Lock}
-                            text={"Account & Security"}
-                            route={"/accountandsecurity"}
+            <div className="container-page">
+                <Section>
+                    <Header>
+                        <Logo />
+                        <Search
+                            onSearchCallback={(search) =>
+                                this.props.onSearchCallback(search)
+                            }
                         />
-                        <MenuItem icon={Card} text={"New Card"}>
-                            <MenuSubItem
-                                icon={Upload}
-                                text={"Upload"}
-                                route={"/cardupload"}
+                        <LoginPanel
+                            user={this.state.user}
+                            setUserCallback={(user) => {
+                                this.setState({ user: user });
+                                this.props.onUserCallback(user);
+                            }}
+                        />
+                    </Header>
+                    <Row id={1}>
+                        <LeftSideMenu>
+                            <MenuItem
+                                icon={Home}
+                                text={"Dashboard"}
+                                route={"/"}
                             />
-                        </MenuItem>
-                        <MenuItem
-                            icon={Settings}
-                            text={"Settings"}
-                            route={"/security"}
+                            {this.state.user._id ? (
+                                <>
+                                    <MenuItem
+                                        icon={Lock}
+                                        text={"Account & Security"}
+                                        route={"/accountandsecurity"}
+                                    />
+                                    <MenuItem
+                                        icon={Card}
+                                        text={"New Card"}
+                                        isMenuActivated={
+                                            this.state.isMenuActivated
+                                        }
+                                        setIsMenuActivated={(isMenuActivated) =>
+                                            this.setState({ isMenuActivated })
+                                        }
+                                    >
+                                        <MenuSubItem
+                                            icon={Upload}
+                                            text={"Upload"}
+                                            isMenuActivated={
+                                                this.state.isMenuActivated
+                                            }
+                                            route={"/cardupload"}
+                                        />
+                                    </MenuItem>
+                                    <MenuItem
+                                        icon={Settings}
+                                        text={"Settings"}
+                                        route={"/security"}
+                                    />
+                                </>
+                            ) : (
+                                ""
+                            )}
+                        </LeftSideMenu>
+                        <ContentPanel>{this.props.children}</ContentPanel>
+                    </Row>
+                    <FloatShareButton>
+                        <FloatShareSubButton
+                            img={FacebookMessenger}
+                            alt={"Share in Facebook messenger"}
                         />
-                    </LeftSideMenu>
-                    <ContentPanel>{this.children}</ContentPanel>
-                </Row>
-                <FloatShareButton>
-                    <FloatShareSubButton
-                        img={FacebookMessenger}
-                        alt={"Share in Facebook messenger"}
-                    />
-                    <FloatShareSubButton img={Skype} alt={"Share in Skype"} />
-                    <FloatShareSubButton img={Print} alt={"Print card"} />
-                    <FloatShareSubButton img={Bump} alt={"Share by bump"} />
-                </FloatShareButton>
-            </Section>
+                        <FloatShareSubButton
+                            img={Skype}
+                            alt={"Share in Skype"}
+                        />
+                        <FloatShareSubButton img={Print} alt={"Print card"} />
+                        <FloatShareSubButton img={Bump} alt={"Share by bump"} />
+                    </FloatShareButton>
+                </Section>
+            </div>
         );
     }
 }

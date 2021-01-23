@@ -1,12 +1,8 @@
 const router = require("express").Router();
-const userRouter = require("./user");
-const cardRouter = require("./card");
+const userRouter = require("./user.js");
+const cardRouter = require("./cards.js");
 
 router.use("/user", userRouter);
-router.use("/card", cardRouter);
-
-router.use(function (req, res) {
-    res.redirect("/");
-});
+router.use("/cards", cardRouter);
 
 module.exports = router;

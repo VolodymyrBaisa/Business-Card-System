@@ -1,5 +1,5 @@
 .float-share-button-container {
-    position: absolute;
+    position: fixed;
     bottom: 1vw;
     right: 1vw;
     border-radius: 50px;
@@ -7,15 +7,25 @@
     width: 3.7vw;
     height: 3.7vw;
     cursor: pointer;
+    z-index: 1000;
     @include flex(center, center, column);
     img {
         width: 3vw;
         transform: translateX(-0.2vw);
         pointer-events: none;
+        transition: transform 0.2s ease;
     }
 }
+
+.is-activated {
+    img {
+        transform: rotate(0.25turn);
+    }
+}
+
 .float-share-children-container {
-    position: absolute;
+    position: fixed;
     bottom: 4.6vw;
     right: 1.3vw;
+    z-index: 1000;
 }

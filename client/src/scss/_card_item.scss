@@ -1,0 +1,15 @@
+.card-item-container {
+    margin-right: 0.2vw;
+    cursor: pointer;
+    .card-item {
+        width: 11vw;
+        height: 7vw;
+        transition: all 0.2s ease-in-out;
+        border-radius: 0.5vw;
+        margin: 0.5vw 0.5vw 0.5vw 0;
+        box-shadow: 0.1vw 0.1vw 0.5vw #000;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}

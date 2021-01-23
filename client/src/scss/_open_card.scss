@@ -1,0 +1,31 @@
+.open-card-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(66, 79, 98, 0.75);
+    width: 42vw;
+    height: 28vw;
+    border-radius: 0.5vw;
+    z-index: 1500;
+
+    .header {
+        @include flex(space-between, center, row);
+        margin: 0.5vw;
+        .header-title {
+            font-size: 1.1vw;
+            color: #fff;
+        }
+    }
+
+    hr {
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #8795aa;
+    }
+
+    .card {
+        width: 100%;
+        height: 25vw;
+        padding: 1vw;
+    }
+}

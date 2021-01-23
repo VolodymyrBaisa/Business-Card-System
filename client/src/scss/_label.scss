@@ -1,0 +1,13 @@
+.label-container {
+    margin: 0.2vw 0;
+    .text {
+        @include flex(flex-start, center, row);
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #424f62;
+        .is-important {
+            color: #ec524b;
+            margin-left: 0.2vw;
+        }
+    }
+}
