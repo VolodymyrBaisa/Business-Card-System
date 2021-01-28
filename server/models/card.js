@@ -5,7 +5,7 @@ const cardSchema = new mongoose.Schema({
     firstName: { type: String, required: true, default: "" },
     lastName: { type: String, required: false, default: "" },
     companyName: { type: String, required: false, default: "" },
-    phoneNumber: { type: Number, required: true, default: "" },
+    phoneNumber: { type: String, required: true, default: "" },
     email: { type: String, required: true, default: "" },
     address: { type: String, required: false, default: "" },
     date: { type: Date, default: Date.now },

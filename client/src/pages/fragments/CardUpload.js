@@ -41,6 +41,7 @@ export default class CardUpload extends Component {
             data.append("cardInfo", JSON.stringify(cardInfo));
             data.append("user", JSON.stringify(this.props));
             data.append("file", file);
+
             cardAPI
                 .upload(data)
                 .then(async (res) => {
