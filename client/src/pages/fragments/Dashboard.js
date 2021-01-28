@@ -17,9 +17,7 @@ export default class Dashboard extends Component {
             bigImgTitle: "",
         };
         this.PUBLIC_URL =
-            process.env.REACT_APP_API_URL ||
-            "https://project3-bcs.herokuapp.com/" ||
-            `http://localhost:3001`;
+            process.env.REACT_APP_API_URL || `http://localhost:3001`;
     }
 
     sortCards(cards) {

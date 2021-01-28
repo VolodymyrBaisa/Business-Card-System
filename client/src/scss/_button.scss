@@ -42,4 +42,20 @@
         color: #fff;
         pointer-events: none;
     }
+
+    input[type="file"] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        padding: 2.2vw 0 0 0;
+        overflow: hidden;
+        outline: none;
+        background: white;
+        cursor: pointer;
+    }
 }

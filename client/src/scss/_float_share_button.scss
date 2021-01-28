@@ -9,11 +9,15 @@
     cursor: pointer;
     z-index: 1000;
     @include flex(center, center, column);
+    transition: transform 0.2s ease;
     img {
         width: 3vw;
         transform: translateX(-0.2vw);
         pointer-events: none;
         transition: transform 0.2s ease;
+    }
+    &:hover {
+        transform: scale(1.1);
     }
 }
 

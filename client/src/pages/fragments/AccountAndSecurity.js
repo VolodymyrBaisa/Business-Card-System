@@ -36,9 +36,11 @@ export default class AccountAndSecurity extends Component {
                     email: this.state.email,
                     password: this.state.password,
                 })
-                .then((res) => {
+                .then(async (res) => {
                     if (res.status === 200) {
-                        this.props.onUserCallback(res.data);
+                        const user = await userAPI.authenticateUser();
+
+                        this.props.onUserCallback(user);
                     }
                 })
                 .catch(console.log);

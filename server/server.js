@@ -9,10 +9,12 @@ const app = express();
 const session = require("express-session");
 const passport = require("./utils/passport");
 const logger = require("morgan");
+const cors = require("cors");
 
 const PORT = process.env.PORT || 3001;
 
 app.use(logger("dev"));
+app.use(cors());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

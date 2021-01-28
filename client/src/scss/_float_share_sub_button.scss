@@ -11,4 +11,7 @@
         width: 2.2vw;
         pointer-events: none;
     }
+    &:hover {
+        transform: scale(1.1);
+    }
 }

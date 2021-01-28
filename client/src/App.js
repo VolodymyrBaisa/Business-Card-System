@@ -35,17 +35,21 @@ function App() {
                         <AccountAndSecurity
                             onUserCallback={(u) => {
                                 setUser({
-                                    ...user,
-                                    firstName: u.firstName,
-                                    lastName: u.lastName,
-                                    email: u.email,
+                                    ...u,
                                 });
                             }}
                             {...user}
                         />
                     </ProtectedRoute>
                     <ProtectedRoute exact path="/cardupload">
-                        <CardUpload {...user} />
+                        <CardUpload
+                            onUserCallback={(u) => {
+                                setUser({
+                                    ...u,
+                                });
+                            }}
+                            {...user}
+                        />
                     </ProtectedRoute>
                     <ProtectedRoute exact path="/security">
                         <Settings

@@ -65,6 +65,11 @@ module.exports = {
     },
 
     update: async function (req, res) {
+        if (!req.body._id) {
+            res.status(401).end("user isn't logged in");
+            return;
+        }
+
         db.User.updateOne(
             { _id: req.body._id },
             {
@@ -77,13 +82,9 @@ module.exports = {
             }
         )
             .then(() => {
-                db.User.findOne({ _id: req.body._id }).then((result) => {
-                    res.json({
-                        firstName: result.first_name,
-                        lastName: result.last_name,
-                        email: result.email,
-                        cards: result.cards,
-                    });
+                res.json({
+                    id: req.body._id,
+                    status: "updated",
                 });
             })
             .catch(console.log);

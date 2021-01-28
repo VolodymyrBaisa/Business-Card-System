@@ -337,7 +337,7 @@ const cardsSeed = [
         email: "hanger@huffmanfield.com",
         address: "425 Hidden Valley Road, NY 87903",
         date: new Date(),
-        img: "/uploads/cards/30.jpg",
+        img: "/uploads/cards/30.png",
     },
 ];
 
